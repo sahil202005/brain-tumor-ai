@@ -1,0 +1,105 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #dbeafe, #f8fafc);
+  min-height: 100vh;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 30px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+h1 {
+  color: #1e3a8a;
+  font-size: 4rem;
+  margin-bottom: 30px;
+}
+
+input[type="file"] {
+  margin: 20px;
+  font-size: 16px;
+}
+
+img {
+  width: 350px;
+  max-width: 90%;
+  border-radius: 15px;
+  border: 3px solid #ddd;
+  margin: 20px 0;
+}
+
+button {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  font-size: 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+.result-card {
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 25px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.info-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.info-card {
+  width: 320px;
+  min-height: 250px;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: left;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.info-card h2 {
+  color: #2563eb;
+  margin-bottom: 15px;
+}
+
+.info-card li {
+  margin-bottom: 10px;
+}
+.tumor-description {
+  margin-top: 15px;
+  line-height: 1.8;
+  font-size: 16px;
+  color: #475569;
+  text-align: left;
+}
+
+.result-card {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 25px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
