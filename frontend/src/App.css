@@ -20,8 +20,11 @@ body {
 
 h1 {
   color: #1e3a8a;
-  font-size: 4rem;
-  margin-bottom: 30px;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.1;
+  margin-bottom: 20px;
 }
 
 input[type="file"] {

@@ -43,11 +43,12 @@ function App() {
 };
   return (
     <div className="container">
-      <h1> AI-Powered Brain Tumor Detection System</h1>
+      <h1>🧠 Brain Tumor Detection</h1>
 
-      <p className="subtitle">
-        Upload a Brain MRI Scan and get AI-powered tumor classification with confidence score.
-      </p>
+<p className="subtitle">
+  AI-powered MRI analysis for detecting Glioma, Meningioma,
+  Pituitary Tumors and No Tumor cases.
+</p>
 
       <input
         type="file"
