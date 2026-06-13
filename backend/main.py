@@ -3,6 +3,8 @@ from fastapi import FastAPI, UploadFile, File
 from tensorflow.keras.models import load_model
 from PIL import Image
 import numpy as np
+import os
+import urllib.request
 class_names = [
     "glioma",
     "meningioma",
@@ -12,13 +14,20 @@ class_names = [
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-model = load_model("../model/brain_tumor_model_final.keras")
+MODEL_PATH = "brain_tumor_model_final.keras"
 
+if not os.path.exists(MODEL_PATH):
+    urllib.request.urlretrieve(
+        "https://huggingface.co/sahil202005/brain-tumor-model/resolve/main/brain_tumor_model_final.keras",
+        MODEL_PATH
+    )
+
+model = load_model(MODEL_PATH)
 @app.post("/predict")
 async def predict(file: UploadFile = File(...)):
 
