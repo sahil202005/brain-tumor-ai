@@ -14,7 +14,10 @@ class_names = [
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=[
+    "http://localhost:5173",
+    "https://brain-tumor-ai-gilt.vercel.app"
+],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -22,12 +25,21 @@ app.add_middleware(
 MODEL_PATH = "brain_tumor_model_final.keras"
 
 if not os.path.exists(MODEL_PATH):
+    print("Downloading model...")
     urllib.request.urlretrieve(
         "https://huggingface.co/sahil202005/brain-tumor-model/resolve/main/brain_tumor_model_final.keras",
         MODEL_PATH
     )
+    print("Download complete!")
+
+print("Loading model...")
+model = load_model(MODEL_PATH)
+print("Model loaded successfully!")
 
 model = load_model(MODEL_PATH)
+@app.get("/")
+def home():
+    return {"message": "Brain Tumor API Running"}
 @app.post("/predict")
 async def predict(file: UploadFile = File(...)):
 
