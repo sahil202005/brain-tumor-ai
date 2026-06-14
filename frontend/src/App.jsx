@@ -17,9 +17,9 @@ function App() {
     formData.append("file", file);
 
     try {
-      const response = await axios.post(
-        https://brain-tumor-ai-production-1325.up.railway.app/predict,
-        formData
+     const response = await axios.post(
+    "http://127.0.0.1:8000/predict",
+      formData
       );
 
       setResult(response.data);
