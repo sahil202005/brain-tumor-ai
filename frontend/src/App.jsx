@@ -18,7 +18,7 @@ function App() {
 
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8000/predict",
+        https://brain-tumor-ai-production-1325.up.railway.app/predict,
         formData
       );
 
