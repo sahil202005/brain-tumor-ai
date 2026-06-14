@@ -3,8 +3,7 @@ from fastapi import FastAPI, UploadFile, File
 from tensorflow.keras.models import load_model
 from PIL import Image
 import numpy as np
-import os
-import urllib.request
+
 class_names = [
     "glioma",
     "meningioma",
